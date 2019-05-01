@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../js/vue.min.js"></script>
+
+</head>
+
+
+
+<body>
+  <div id="app" >
+      <counterT></counterT>
+      <counterT></counterT>
+
+
+
+      <pre>
+          {{ $data|json}}
+      </pre>
+  </div>
+
+
+
+  <template id="counter">
+      <h1>template是html5自定义的一个标签</h1>
+  </template>
+
+<script>
+    Vue.component('counterT',{
+        template:'#counter'
+    });
+    new Vue({
+        el:"#app",
+        methods:{
+            test:function () {
+                alert("我是一个按钮");
+            }
+        },
+        data:{
+            message:"helloworld",
+        }
+        }
+    )
+</script>
+</body>
+</html>
